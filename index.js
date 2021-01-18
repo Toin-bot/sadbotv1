@@ -311,7 +311,7 @@ async function starts() {
 						reply(`Kirim gambar dengan caption ${prefix}sticker atau tag gambar yang sudah dikirim`)
 					}
 					break
-				case 'gtts':
+				case 'tts':
 					if (args.length < 1) return client.sendMessage(from, '𝐊𝐨𝐝𝐞 𝐁𝐚𝐡𝐚𝐬𝐚𝐧𝐲𝐚 𝐌𝐚𝐧𝐚 𝐔𝐦?', text, {quoted: mek})
 					const gtts = require('./lib/gtts')(args[0])
 					if (args.length < 2) return client.sendMessage(from, '𝐓𝐞𝐱𝐭𝐧𝐲𝐚 𝐌𝐚𝐧𝐚 𝐓𝐨𝐝?', text, {quoted: mek})
