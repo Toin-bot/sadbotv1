@@ -28,7 +28,7 @@ const vcard = 'BEGIN:VCARD\n' // OM JANGAN DI UBAH OM
             + 'VERSION:3.0\n' // INI WEEM RAMLAN GANS
             + 'FN:RamlanGans\n' // UBAH INI
             + 'ORG:Owner BOT;\n' // UBAH INI
-            + 'TEL;type=CELL;type=VOICE;waid=6285559240360:+62 855-5924-0360\n' // UBAH INI
+            + 'TEL;type=CELL;type=VOICE;waid=5573981054006:+55 8105-4006\n' // UBAH INI
             + 'END:VCARD' // WEEM DIHAPUS GUE BERHENTI UPDATE SCRIPT
 prefix = '#'
 blocked = []
@@ -123,23 +123,23 @@ async function starts() {
 			const isCmd = body.startsWith(prefix)
 
 			mess = {
-				wait: '⌛ 𝐒𝐚𝐛𝐚𝐫 𝐓𝐨𝐝 ⌛',
-				success: '✔️ 𝐁𝐞𝐫𝐡𝐚𝐬𝐢𝐥 ✔️',
+				wait: '⌛ espere um pouco ai man🤝🌝⌛',
+				success: '✔️ pronto ;-; ✔️',
 				error: {
-					stick: '❌ Gagal, terjadi kesalahan saat mengkonversi gambar ke sticker ❌',
-					Iv: '❌ Link tidak valid ❌'
+					stick: '❌ Falha, ocorreu um erro ao converter a imagem para sticker ❌',
+					Iv: '❌ Link inválido ❌'
 				},
 				only: {
-					group: '❌ Perintah ini hanya bisa di gunakan dalam group! ❌',
-					ownerG: '❌ Perintah ini hanya bisa di gunakan oleh owner group! ❌',
-					ownerB: '❌ Perintah ini hanya bisa di gunakan oleh owner bot! ❌',
-					admin: '❌ Perintah ini hanya bisa di gunakan oleh admin group! ❌',
-					Badmin: '❌ Perintah ini hanya bisa di gunakan ketika bot menjadi admin! ❌'
+					group: '❌ Este comando só pode ser usado em grupos! ❌ ',
+					ownerG: '❌ Este comando só pode ser usado pelo grupo proprietário! ❌ ',
+					ownerB: '❌ Este comando só pode ser usado pelo proprietário do bot! ❌',
+					admin: '❌ Este comando só pode ser usado por administradores de grupo! ❌ ', 
+Badmin: '❌ Este comando só pode ser usado quando o bot é admin! ❌ '
 				}
 			}
 
 			const botNumber = client.user.jid
-			const ownerNumber = ["6285559240360@s.whatsapp.net"] // replace this with your number
+			const ownerNumber = ["5573981054006@s.whatsapp.net"] // replace this with your number
 			const isGroup = from.endsWith('@g.us')
 			const sender = isGroup ? mek.participant : mek.key.remoteJid
 			const groupMetadata = isGroup ? await client.groupMetadata(from) : ''
@@ -256,7 +256,7 @@ async function starts() {
 								console.log(`Error : ${err}`)
 								fs.unlinkSync(media)
 								tipe = media.endsWith('.mp4') ? 'video' : 'gif'
-								reply(`❌ Gagal, pada saat mengkonversi ${tipe} ke stiker`)
+								reply(`falhou amigo ;( só tristeza`)
 							})
 							.on('end', function () {
 								console.log('Finish')
@@ -343,7 +343,7 @@ async function starts() {
 					case 'owner':
                 case 'creator':
                   client.sendMessage(from, {displayname: "Jeff", vcard: vcard}, MessageType.contact, { quoted: mek})
-               client.sendMessage(from, 'Nih nomor pacarku😍, ehh ownerku hehee😁 jangan di galakin ya:*',MessageType.text, { quoted: mek} )
+               client.sendMessage(from, 'Este é o número do meu namorado😍, ehh ownerku hehee😁 não fique chateado:*',MessageType.text, { quoted: mek} )
                 break
 				/*case 'loli':
 					loli.getSFWLoli(async (err, res) => {
@@ -499,12 +499,12 @@ async function starts() {
 						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
 						buff = await client.downloadMediaMessage(encmedia)
 						for (let _ of anu) {
-							client.sendMessage(_.jid, buff, image, {caption: `[ 𝐒𝐚𝐝𝐁𝐨𝐭𝐳 𝐁𝐑𝐎𝐀𝐃𝐂𝐀𝐒𝐓 ]\n\n${body.slice(4)}`})
+							client.sendMessage(_.jid, buff, image, {caption: `[ 𝐈𝐓𝐀𝐂𝐇𝐈𝐁𝐨𝐭𝐳 𝐁𝐑𝐎𝐀𝐃𝐂𝐀𝐒𝐓 ]\n\n${body.slice(4)}`})
 						}
 						reply('𝐃𝐎𝐍𝐄 𝐎𝐌')
 					} else {
 						for (let _ of anu) {
-							sendMess(_.jid, `[ 𝐒𝐚𝐝𝐁𝐨𝐭𝐳 𝐁𝐑𝐎𝐀𝐃𝐂𝐀𝐒𝐓 ]\n\n${body.slice(4)}`)
+							sendMess(_.jid, `[ 𝐈𝐓𝐀𝐂𝐇𝐈𝐁𝐨𝐭𝐳 𝐁𝐑𝐎𝐀𝐃𝐂𝐀𝐒𝐓 ]\n\n${body.slice(4)}`)
 						}
 						reply('𝐃𝐎𝐍𝐄 𝐎𝐌')
 					}
@@ -610,14 +610,14 @@ async function starts() {
 					ran = getRandom('.png')
 					exec(`ffmpeg -i ${media} ${ran}`, (err) => {
 						fs.unlinkSync(media)
-						if (err) return reply('❌ Gagal, pada saat mengkonversi sticker ke gambar ❌')
+						if (err) return reply('mais que merda,falhou ;(')
 						buffer = fs.readFileSync(ran)
-						client.sendMessage(from, buffer, image, {quoted: mek, caption: '>//<'})
+						client.sendMessage(from, buffer, image, {quoted: mek, caption: 'ta ai riri'})
 						fs.unlinkSync(ran)
 					})
 					break
 				case 'simi':
-					if (args.length < 1) return reply('Textnya mana um?')
+					if (args.length < 1) return reply('cade o texto em🧐?')
 					teks = body.slice(5)
 					anu = await simih(teks) //fetchJson(`https://mhankbarbars.herokuapp.com/api/samisami?text=${teks}`, {method: 'get'})
 					//if (anu.error) return reply('Simi ga tau kak')
